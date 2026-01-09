@@ -33,7 +33,7 @@ function NoteForm({ addNote }) {
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
-      <button disabled={!title.trim()}>Add Notet</button>
+      <button disabled={!title.trim()}>Add Note</button>
     </form>
   );
 }

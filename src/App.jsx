@@ -5,7 +5,7 @@ import Loader from "./components/Loader";
 import EmptyState from "./components/EmptyState";
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(localStorage.getItem("notes") ? JSON.parse(localStorage.getItem("notes")) : []);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -14,10 +14,12 @@ function App() {
 
   const addNote = (note) => {
     setNotes((prev) => [...prev, note]);
+    localStorage.setItem("notes", JSON.stringify([...notes, note]));
   };
 
   const deleteNote = (id) => {
     setNotes((prev) => prev.filter((note) => note.id !== id));
+    localStorage.setItem("notes", JSON.stringify(notes.filter((note) => note.id !== id)));
   };
 
   if (loading) return <Loader />;

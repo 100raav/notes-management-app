@@ -15,6 +15,7 @@ This project was developed as part of a **React JS internship assessment**, with
 ## 🚀 Features
 
 - ➕ Add notes with a required title and optional description  
+- ➕ Persistent storage of notes using localstorage
 - 📋 View notes in a clean card-based layout  
 - ❌ Delete notes instantly  
 - ⏳ Loading state on initial render  
